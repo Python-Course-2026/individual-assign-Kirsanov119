@@ -34,3 +34,4 @@ def convert_timezone(time_str: str, from_tz: str, to_tz: str) -> dict:
         "converted_timezone": to_tz,
         "timezone_offset": offset_str
     }
+

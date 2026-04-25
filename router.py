@@ -16,3 +16,4 @@ def convert_time(data: TimeConvertRequest):
 
     result = convert_timezone(data.time, data.from_tz, data.to_tz)
     return result
+
