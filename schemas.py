@@ -1,12 +1,13 @@
-from pydantic import BaseModel, Field
+from pydantic import BaseModel
 
+class TimeConvertRequest(BaseModel):
+    time: str
+    from_tz: str
+    to_tz: str
 
-class TextRequest(BaseModel):
-    text: str = Field(..., min_length=1, description="Текст для анализа")
-
-
-class TextAnalysisResponse(BaseModel):
-    word_count: int = Field(..., description="Количество слов")
-    char_count: int = Field(..., description="Количество символов (с пробелами)")
-    char_count_no_spaces: int = Field(..., description="Количество символов (без пробелов)")
-    top_words: list[tuple[str, int]] = Field(..., description="Топ-5 слов по частоте")
+class TimeConvertResponse(BaseModel):
+    original_time: str
+    original_timezone: str
+    converted_time: str
+    converted_timezone: str
+    timezone_offset: str
